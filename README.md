@@ -1,0 +1,5 @@
+# SKSTACK_IP_API_TEST
+SKSTACK_IP_APIテスト
+
+SKSTACK-IPのAPIです。
+ただいまテスト中です。
