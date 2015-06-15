@@ -1,4 +1,4 @@
-﻿/****
+/****
 Copyright (c) 2015, Skyley Networks, Inc.
 All rights reserved.
 
