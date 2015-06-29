@@ -4,13 +4,13 @@ All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
-* Redistributions of source code must retain the above copyright notice, 
+* Redistributions of source code must retain the above copyright notice,
   this list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above copyright notice, 
-  this list of conditions and the following disclaimer in the documentation 
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
   and/or other materials provided with the distribution.
-* Neither the name of the Skyley Networks, Inc. nor the names of its contributors 
-  may be used to endorse or promote products derived from this software 
+* Neither the name of the Skyley Networks, Inc. nor the names of its contributors
+  may be used to endorse or promote products derived from this software
   without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
@@ -76,7 +76,7 @@ import com.skyley.skstack_ip.api.skevents.SKESreg;
 import com.skyley.skstack_ip.api.skevents.SKEVer;
 
 /**
- * SKSTACK-IP for HANを実装したデバイス1台に対応するクラス、
+ * SKSTACK IP for HAN Standard Editionを実装したデバイス1台に対応するクラス、
  * アプリケーションはこのクラスをインスタンス化し、メソッドを呼び出す。<br>
  * 他のクラスはアプリケーションからは直接使わない。
  * @author Skyley Networks, Inc.
@@ -130,6 +130,7 @@ public class SKHanDevice {
 			reader = new SKRxBufferReader(buffer, model, portString);
 
 			commandTimeout = 2000;
+			port.enableReceiveTimeout(2000);
 
 			Thread trx = new Thread(receiver);
 			Thread tread = new Thread(reader);
