@@ -130,7 +130,21 @@ public class SKDevice {
 			port = (SerialPort)commPort;
 
 			port.setSerialPortParams(115200,SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
-			port.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
+
+			//modify 20161213
+			//port.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
+			port.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_OUT);
+			/*
+			System.out.println(port.isCD());
+			System.out.println(port.isCTS());
+			System.out.println(port.isDSR());
+			System.out.println(port.isDTR());
+			System.out.println(port.isRI());
+			System.out.println(port.isRTS() + "\r\n");
+			*/
+			port.setDTR(true);
+			port.setRTS(false);
+			//
 
 			this.portString = portString;
 			buffer = new ArrayBlockingQueue<String>(64);
